@@ -17,46 +17,36 @@ font-family: "Lucida Console", "Courier New", monospace;
 -z-animation: rainbow 18s ease infinite;  
 -o-animation: rainbow 18s ease infinite;  
   animation: rainbow 18s ease infinite; }  
-h1  {  
-  line-height: 2em;   
-  padding-bottom: 5px;  
-  text-transform: none;  
-  font-size: 1.7em;  
- font-weight: bold;  
-  font-style: italic;  
- font-family: "Lucida Console", "Courier New", monospace;  
-  color: #999;   
-  letter-spacing: -0.005em;  
-  word-spacing: 1px;  
-  letter-spacing: none;  
-}  
-h2  {  
-  margin-top: 40px;  
-  text-transform: none;  
-  font-size: 1.75em;  
-  font-weight: bold;  
-  font-family: "Lucida Console", "Courier New", monospace;  
-  color: #999;   
-  letter-spacing: -0.005em;   
-  word-spacing: 1px;  
-  letter-spacing: none;  
-}  
-.clock {  
-    position: absolute;  
-    top: 50%;  
-    left: 50%;  
-     padding-top: 15px;  
-    transform: translateX(-50%) translateY(-50%);  
+
+.container {
+	display: flex;
+	flex-direction: column;
+	top: 50%;
+	margin-top:8%;
+
+}
+.clock {
+ 
     color: #FFFFFF; 
-	font-size: 20vw;
-    //font-size: 500px;  
+	font-size: 20vw; 
+    font-family: Helvetica;  
+	font-weight: bold;
+    letter-spacing: 9px; 	
+}  
+.session {  
+  
+    color: #FFFFFF; 
+	font-size: 10vw;   
     font-family: Helvetica;  
 	font-weight: bold;
     letter-spacing: 9px;  
-}  
+}
 </style>  
-<body>  
-<div id = "MyClockDisplay" class = "clock" onload = "showTime()"> </div>  
+<body>
+<div class="container">
+<div id = "MyClockDisplay" class = "clock" onload = "showTime()"> </div>
+<div id = "SessionDisplay" class = "session"> </div> 
+</div>
 <script>  
 function showTime(){  
     var date = new Date();  
@@ -74,12 +64,16 @@ function showTime(){
     //h = (h < 10) ? "0" + h : h;  
     m = (m < 10) ? "0" + m : m;  
     s = (s < 10) ? "0" + s : s;  
-    var time = h + ":" + m + " ";  
-    document.getElementById("MyClockDisplay").innerText = time + session;  
+    var time = h + ":" + m + " "; 
+	console.log(session)
+    document.getElementById("MyClockDisplay").innerText = time;
+	document.getElementById("SessionDisplay").innerText = session;
     //document.getElementById("MyClockDisplay").textContent = time + session;  
     setTimeout(showTime, 1000);  
 }  
 showTime();  
-</script>  
+</script> 
+
+
 </body>  
 </html>  
