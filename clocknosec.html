@@ -1,79 +1,83 @@
-<! DOCTYPE html>  
-<html lang = "en">  
-<head>  
-  <meta charset = "UTF-8">  
-  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">  
-  <meta http-equiv = "X-UA-Compatible" content = "ie=edge">  
-  <title> Clock  
- </title>  
-<style>  
-body {   
-  text-align: center;  
-  padding: 20px;  
-background-color: #000000;  
-background-size: 1800% 1800%;  
-font-family: "Lucida Console", "Courier New", monospace;  
--webkit-animation: rainbow 18s ease infinite;  
--z-animation: rainbow 18s ease infinite;  
--o-animation: rainbow 18s ease infinite;  
-  animation: rainbow 18s ease infinite; }  
+<! DOCTYPE html>
+    <html lang="en">
 
-.container {
-	display: flex;
-	flex-direction: column;
-	top: 50%;
-	margin-top:8%;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> Clock
+        </title>
+        <style>
+            body {
+                text-align: center;
+                padding: 20px;
+                background-color: #000000;
+                background-size: 1800% 1800%;
+                font-family: "Lucida Console", "Courier New", monospace;
+                -webkit-animation: rainbow 18s ease infinite;
+                -z-animation: rainbow 18s ease infinite;
+                -o-animation: rainbow 18s ease infinite;
+                animation: rainbow 18s ease infinite;
+            }
 
-}
-.clock {
- 
-    color: #FFFFFF; 
-	font-size: 20vw; 
-    font-family: Helvetica;  
-	font-weight: bold;
-    letter-spacing: 9px; 	
-}  
-.session {  
-  
-    color: #FFFFFF; 
-	font-size: 10vw;   
-    font-family: Helvetica;  
-	font-weight: bold;
-    letter-spacing: 9px;  
-}
-</style>  
-<body>
-<div class="container">
-<div id = "MyClockDisplay" class = "clock" onload = "showTime()"> </div>
-<div id = "SessionDisplay" class = "session"> </div> 
-</div>
-<script>  
-function showTime(){  
-    var date = new Date();  
-    var h = date.getHours();  
-    var m = date.getMinutes();  
-    var s = date.getSeconds();  
-    var session = "AM";  
-    if(h == 0) {  
-        h = 12;  
-    }  
-    if(h > 12) {  
-        h = h - 12;  
-        session = "PM";  
-    }  
-    //h = (h < 10) ? "0" + h : h;  
-    m = (m < 10) ? "0" + m : m;  
-    s = (s < 10) ? "0" + s : s;  
-    var time = h + ":" + m + " "; 
-	console.log(session)
-    document.getElementById("MyClockDisplay").innerText = time;
-	document.getElementById("SessionDisplay").innerText = session;
-    //document.getElementById("MyClockDisplay").textContent = time + session;  
-    setTimeout(showTime, 1000);  
-}  
-showTime();  
-</script> 
+            .container {
+                display: flex;
+                flex-direction: column;
+                top: 50%;
+                margin-top: 8%;
 
+            }
 
-</body>  
-</html>  
+            .clock {
+
+                color: #FFFFFF;
+                font-size: 20vw;
+                font-family: Helvetica;
+                font-weight: bold;
+                letter-spacing: 9px;
+            }
+
+            .session {
+
+                color: #FFFFFF;
+                font-size: 10vw;
+                font-family: Helvetica;
+                font-weight: bold;
+                letter-spacing: 9px;
+            }
+        </style>
+
+    <body>
+        <div class="container">
+            <div id="MyClockDisplay" class="clock" onload="showTime()"> </div>
+            <div id="SessionDisplay" class="session"> </div>
+        </div>
+        <script>
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+                var session = "AM";
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                //h = (h < 10) ? "0" + h : h;  
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+                var time = h + ":" + m + " ";
+                console.log(session)
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("SessionDisplay").innerText = session;
+                //document.getElementById("MyClockDisplay").textContent = time + session;  
+                setTimeout(showTime, 1000);
+            }
+            showTime();  
+        </script>
+    </body>
+
+    </html>
