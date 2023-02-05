@@ -21,15 +21,19 @@
             }
 
             .container {
-                display: flex;
-                flex-direction: column;
+                position: absolute;
                 top: 50%;
-                margin-top: 8%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
 
             }
 
             .clock {
-
                 color: #FFFFFF;
                 font-size: 20vw;
                 font-family: Helvetica;
@@ -38,9 +42,10 @@
             }
 
             .session {
-
+                margin-top: 16%;
+                margin-left: 2%;
                 color: #FFFFFF;
-                font-size: 10vw;
+                font-size: 8vw;
                 font-family: Helvetica;
                 font-weight: bold;
                 letter-spacing: 9px;
@@ -66,11 +71,10 @@
                     h = h - 12;
                     session = "PM";
                 }
-                //h = (h < 10) ? "0" + h : h;  
+                //h = (h < 10) ? "0" + h : h;
                 m = (m < 10) ? "0" + m : m;
                 s = (s < 10) ? "0" + s : s;
                 var time = h + ":" + m + " ";
-                console.log(session)
                 document.getElementById("MyClockDisplay").innerText = time;
                 document.getElementById("SessionDisplay").innerText = session;
                 //document.getElementById("MyClockDisplay").textContent = time + session;  
