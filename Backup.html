@@ -1,0 +1,91 @@
+<! DOCTYPE html>
+    <html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google" content="notranslate">
+        <meta http-equiv="Content-Language" content="en">
+        <title> Clock
+        </title>
+        <style>
+            body {
+                text-align: center;
+                padding: 20px;
+                background-color: #000000;
+                background-size: 1800% 1800%;
+                font-family: "Lucida Console", "Courier New", monospace;
+                -webkit-animation: rainbow 18s ease infinite;
+                -z-animation: rainbow 18s ease infinite;
+                -o-animation: rainbow 18s ease infinite;
+                animation: rainbow 18s ease infinite;
+            }
+
+            .container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                user-select: none;
+
+
+            }
+
+            .clock {
+                color: #FFFFFF;
+                font-size: 20vw;
+                font-family: Helvetica;
+                font-weight: bold;
+                letter-spacing: 9px;
+                
+            }
+
+            .session {
+                margin-top: 10%;
+                margin-left: 2%;
+                color: #FFFFFF;
+                font-size: 8vw;
+                font-family: Helvetica;
+                font-weight: bold;
+                letter-spacing: 9px;
+                
+            }
+        </style>
+
+    <body>
+        <div class="container">
+            <div id="MyClockDisplay" class="clock" onload="showTime()"> </div>
+            <div id="SessionDisplay" class="session"> </div>
+        </div>
+        <script>
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+                var session = "AM";
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                //h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+                var time = h + ":" + m + ":" + s;
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("SessionDisplay").innerText = session;
+                //document.getElementById("MyClockDisplay").textContent = time + session;  
+                setTimeout(showTime, 1000);
+            }
+            showTime();  
+        </script>
+    </body>
+
+    </html>

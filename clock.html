@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="google" content="notranslate">
         <meta http-equiv="Content-Language" content="en">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
         <title> Clock
         </title>
         <style>
@@ -37,7 +40,7 @@
 
             .clock {
                 color: #FFFFFF;
-                font-size: 20vw;
+                font-size: 25vw;
                 font-family: Helvetica;
                 font-weight: bold;
                 letter-spacing: 9px;
@@ -45,8 +48,29 @@
             }
 
             .session {
-                margin-top: 10%;
+                margin-top: 0%;
                 margin-left: 2%;
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                user-select: none;
+
+                
+            }
+
+            .seconds {
+                margin-top: 0%;
+                margin-left: 0%;
+                color: #FFFFFF;
+                font-size: 10.6vw;
+                font-family: Helvetica;
+                font-weight: bold;
+                letter-spacing: 9px;
+                
+            }
+            .ampm {
+                margin-top: 0%;
+                margin-left: 0%;
                 color: #FFFFFF;
                 font-size: 8vw;
                 font-family: Helvetica;
@@ -59,7 +83,9 @@
     <body>
         <div class="container">
             <div id="MyClockDisplay" class="clock" onload="showTime()"> </div>
-            <div id="SessionDisplay" class="session"> </div>
+            <div class="session">
+                <div id="SecondsDisplay" class="seconds"> </div>
+                <div id="SessionDisplay" class="ampm"> </div>
         </div>
         <script>
             function showTime() {
@@ -78,9 +104,11 @@
                 //h = (h < 10) ? "0" + h : h;
                 m = (m < 10) ? "0" + m : m;
                 s = (s < 10) ? "0" + s : s;
-                var time = h + ":" + m + ":" + s;
+                var time = h + ":" + m;
+                var sec = s;
                 document.getElementById("MyClockDisplay").innerText = time;
                 document.getElementById("SessionDisplay").innerText = session;
+                document.getElementById("SecondsDisplay").innerText = sec;
                 //document.getElementById("MyClockDisplay").textContent = time + session;  
                 setTimeout(showTime, 1000);
             }
