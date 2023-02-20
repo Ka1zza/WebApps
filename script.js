@@ -40,17 +40,17 @@ function startTime() {
   
   //all image URLs are put into this array. feel free to change URLs
   var img = {
-    "1": "/images/1.png",
-    "2": "/images/2.png",
-    "3": "/images/3.png",
-    "4": "/images/4.png",
-    "5": "/images/5.png",
-    "6": "/images/6.png",
-    "7": "/images/7.png",
-    "8": "/images/8.png",
-    "9": "/images/9.png",
-    "0": "/images/0.png",
-    ":": "/images/dot.png",
+    "1": "https://ka1zza.github.io/WebApps/images/1.png",
+    "2": "https://ka1zza.github.io/WebApps/images/2.png",
+    "3": "https://ka1zza.github.io/WebApps/images/3.png",
+    "4": "https://ka1zza.github.io/WebApps/images/4.png",
+    "5": "https://ka1zza.github.io/WebApps/images/5.png",
+    "6": "https://ka1zza.github.io/WebApps/images/6.png",
+    "7": "https://ka1zza.github.io/WebApps/images/7.png",
+    "8": "https://ka1zza.github.io/WebApps/images/8.png",
+    "9": "https://ka1zza.github.io/WebApps/images/9.png",
+    "0": "https://ka1zza.github.io/WebApps/images/0.png",
+    ":": "https://ka1zza.github.io/WebApps/images/dot.png",
   }
   
   //credit images to:
