@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script type="text/javascript" src="script.js">
+    </script>
+</head>
+<style>
+    body {
+        margin-top: 0;
+        margin-left: 0;
+        background-color: #000000;
+        overflow: hidden;
+    }
+
+    .cont {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+
+        width: 100vw;
+        max-height: 100vh;
+    }
+
+    .clock {
+
+        max-height: 50vh;
+        width: 150%;
+        scale: 70%;
+        margin-left: calc(100vw - 125vw);
+    }
+
+    .block  {
+
+        height: 60vh;
+
+    }
+
+</style>
+
+<body onload="startTime()">
+    <div class="cont">
+        <div class="block"></div>
+        <div id="txt" class="clock"></div>
+        <div class="block"></div>
+    </div>
+</body>
+
+</html>
